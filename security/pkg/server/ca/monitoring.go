@@ -60,9 +60,22 @@ var (
 		"The unix timestamp, in seconds, when Citadel root cert will expire. "+
 			"A negative time indicates the cert is expired.",
 	)
+
+	rootCertExpiryRemainingSeconds = monitoring.NewGauge(
+		"citadel_server_root_cert_expiry_seconds_remaining",
+		"The time in seconds left when Citadel root cert will expire. "+
+			"A negative time indicates the cert is expired.",
+	)
+
 	certChainExpiryTimestamp = monitoring.NewGauge(
 		"citadel_server_cert_chain_expiry_timestamp",
 		"The unix timestamp, in seconds, when Citadel cert chain will expire. "+
+			"A negative time indicates the cert is expired.",
+	)
+
+	certChainExpiryRemainingSeconds = monitoring.NewGauge(
+		"citadel_server_cert_chain_expiry_seconds_remaining",
+		"The time in seconds left when Citadel cert chain will expire. "+
 			"A negative time indicates the cert is expired.",
 	)
 )
